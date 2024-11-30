@@ -21,12 +21,10 @@ const options = {
     ]
   },
   apis: [
-    path.join(__dirname, '../routes/*.ts'),
-    path.join(__dirname, '../routes/*.js'),
-    path.join(__dirname, '../**/*.ts'),
-    path.join(__dirname, '../**/*.js'),
     './src/routes/*.ts',
-    './dist/routes/*.js'
+    './src/routes/*.js',
+    './dist/routes/*.js',
+    path.join(__dirname, '../routes/*.js')
   ]
 };
 
