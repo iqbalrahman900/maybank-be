@@ -1,4 +1,3 @@
-#docker-compose.yml
 version: '3'
 services:
   app:
@@ -8,11 +7,11 @@ services:
     environment:
       - NODE_ENV=production
       - MONGODB_URI=mongodb://mongodb:27017/maybank
+    networks:
+      - app-network
     depends_on:
       - mongodb
-    volumes:
-      - ./:/app
-      - /app/node_modules
+
 
   mongodb:
     image: mongo
@@ -20,7 +19,12 @@ services:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
+    networks:
+      - app-network
 
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   mongodb_data:

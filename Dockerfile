@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 COPY --from=builder /app/dist ./dist
-# Copy any necessary config files if they exist
+
 COPY .env* ./
 EXPOSE 3000
 # Add a health check
