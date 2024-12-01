@@ -11,7 +11,7 @@ const options = {
     },
     servers: [
       {
-        url: 'https://13.213.59.244',
+        url: 'https://54.169.80.184',
         description: 'Production server'
       },
       {
